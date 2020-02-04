@@ -4,3 +4,12 @@ class Solution:
             temp = target - x
             if temp in nums and nums.index(temp) != i:
                 return [i,nums.index(temp)]
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        map_iv = {}
+        for i, x in enumerate(nums):
+            temp = target - x
+            if x in map_iv.keys():
+                return [map_iv[x], i]
+            map_iv[temp] = i
