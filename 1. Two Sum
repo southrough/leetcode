@@ -13,3 +13,5 @@ class Solution:
             if x in map_iv.keys():
                 return [map_iv[x], i]
             map_iv[temp] = i
+
+那差值去遍历容易想到，困难在于如何保证差值不重复
