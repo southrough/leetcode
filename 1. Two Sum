@@ -26,3 +26,24 @@ class Solution:
             alist.append(temp)
 
 dict效率还是远高于list
+
+C++ unordered_map 用法
+class Solution {
+public:
+     vector<int> twoSum(vector<int>& nums, int target) {
+         vector<int> res(2);
+         unordered_map<int,int> h_map;
+         for(int i=0;i<nums.size();++i){
+             int temp=target-nums[i];
+             unordered_map<int,int>::iterator found;
+             found = h_map.find(nums[i]);
+             if(found!=h_map.end()){
+                 res[0]=found->second;
+                 res[1]=i;
+                 return res;
+             }
+             h_map[temp]=i;
+         }
+        return res;
+     }
+};
