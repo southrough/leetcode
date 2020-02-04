@@ -15,3 +15,14 @@ class Solution:
             map_iv[temp] = i
 
 那差值去遍历容易想到，困难在于如何保证差值不重复
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        alist=[]
+        for i,x in enumerate(nums):
+            temp = target - x
+            if x in alist:
+                return [alist.index(x),i]
+            alist.append(temp)
+
+dict效率还是远高于list
